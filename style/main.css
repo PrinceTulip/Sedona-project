@@ -33,12 +33,30 @@ a {
   text-decoration: none;
 }
 
-
-
 .container {
   margin: 0 auto;
   width: 1056px;
 }
 
+.index-content {
+  background: #fff;
+}
+
+.description {
+  padding: 50px 0;
+  text-align: center;
+  background: #81b3d2;
+}
+
+.item-description-text {
+  width: 328px;
+  float: left;
+}
+
+.item-description-images {
+  width: 728px;
+  float: right;
+
+}
 
 
