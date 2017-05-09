@@ -38,7 +38,7 @@ a {
   width: 1200px;
 }
 
-.wrapper .container {
+.main-block .container {
   margin: 0 auto;
   width: 1056px;
 }
@@ -51,12 +51,13 @@ a {
   color: #fff;
   text-align: center;
   background: #81b3d2;
+
 }
 
 .item-description-text {
   width: 280px;
   float: left;
-  padding: 50px 0;
+  padding: 0 36px;
 }
 
 .item-description-text b  {
@@ -109,7 +110,7 @@ a {
 .item-description-images {
   width: 728px;
   height: 256px;
-  float: right;
+  float: left;
 }
 
 .item-description-images img {
@@ -128,15 +129,16 @@ a {
   width: 138px;
   height: 70px;
   top: 0;
-  left: 45%;
+  left: 43%;
   background: url("../images/header-logo.png") no-repeat;
+  z-index: 2;
 }
 
 .main-navigation li {
   display: inline-block;
   vertical-align: top;
   font-weight: bold;
-  padding-right: 146px;
+  padding-right: 116px;
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -153,6 +155,49 @@ a {
   color: #81b3d2;
   transition: 0.3s;
 }
+
+.main-navigation a:active {
+  color: #b2b2b2;
+  transition: none;
+}
+
+.main-navigation .active {
+  color: #766357;
+}
+
+.main-navigation .active:hover {
+  color: #604e43;
+}
+
+.main-navigation .active:active {
+  color: #d6d0cc;
+}
+
+.welcome-text {
+  position: relative;
+}
+
+.promo-header {
+  position: relative;
+  text-align: center;
+  background-color: #ffffff;
+  top: -216px;
+  left: 0;
+}
+
+.promo-header h2 {
+  font-size: 21px;
+  text-transform: uppercase;
+  padding-top: 60px;
+  padding-bottom: 39px;
+}
+
+.promo-header p {
+  font-size: 14px;
+  text-transform: uppercase;
+  padding-bottom: 58px;
+}
+
 
 
 
