@@ -54,9 +54,56 @@ a {
 }
 
 .item-description-text {
-  width: 328px;
+  width: 280px;
   float: left;
   padding: 50px 0;
+}
+
+.item-description-text b  {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 21px;
+  line-height: 30px;
+  font-weight: bold;
+}
+
+.number span {
+  position: relative;
+  display: inline;
+  padding: 0 6px;
+  z-index: 2;
+  background: #81b3d2;
+}
+
+.number::after {
+  content: "";
+  width: 30px;
+  display: block;
+  position: relative;
+  bottom: 12px;
+  left: 104px;
+  z-index: 1;
+  border-bottom: 2px solid #bcd6e7;
+}
+
+.number::before {
+  content: "";
+  width: 30px;
+  display: block;
+  position: relative;
+  bottom: 11px;
+  top: 11px;
+  right: -145px;
+  z-index: 1;
+  border-bottom: 2px solid #bcd6e7;
+}
+
+
+
+.number {
+  font-size: 14px;
+  line-height: 21px;
+
 }
 
 .item-description-images {
