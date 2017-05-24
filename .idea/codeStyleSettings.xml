@@ -4,14 +4,9 @@
     <option name="PER_PROJECT_SETTINGS">
       <value>
         <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="true" />
-        <codeStyleSettings language="HTML">
-          <indentOptions>
-            <option name="INDENT_SIZE" value="2" />
-            <option name="TAB_SIZE" value="2" />
-          </indentOptions>
-        </codeStyleSettings>
+        <option name="HTML_KEEP_BLANK_LINES" value="3" />
       </value>
     </option>
-    <option name="PREFERRED_PROJECT_CODE_STYLE" value="Default" />
+    <option name="USE_PER_PROJECT_SETTINGS" value="true" />
   </component>
 </project>
