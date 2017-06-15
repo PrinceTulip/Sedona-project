@@ -12,7 +12,7 @@
     <header class="main-header">
       <div class="container clearfix">
         <nav class="main-navigation">
-          <ul>
+          <ul class="first-ul">
             <li>
               <a class="active" href="#">Информация</a>
             </li>
@@ -20,7 +20,7 @@
               <a href="#">Фото и Видео</a>
             </li>
           </ul>
-          <ul>
+          <ul class="second-ul">
             <li>
               <a href="#">Карта Штата</a>
             </li>
@@ -105,13 +105,13 @@
         <div class="features-item-2">
           <h2>Красивая<br>дорога</h2>
           <p class="features-p"><span>№4</span></p>
-          <p>ЕХАТЬ В СЕДОНУ ИЗ ЛАС-ВЕГАСА совсем<br>
+          <p>ЕХАТЬ В СЕДОНУ ИЗ ЛАС-ВЕГАСА совсем
             НЕ СКУЧНО!</p>
         </div>
         <div class="features-item-2">
           <h2>Мало<br>туристов</h2>
           <p class="features-p"><span>№5</span></p>
-          <p>Большинство едет в гранд каньон и<br> толпится там</p>
+          <p>Большинство едет в гранд каньон и толпится там</p>
         </div>
       </div>
     </div>
@@ -134,24 +134,35 @@
         <a href="#">#VisitSedona</a>
       </div>
       <div class="footer-social clearfix">
-        <div class="tw">
-          <a  class="social-btn social-btn-tw" href="#">Twitter</a>
-        </div>
-        <div class="fb">
-          <a class="social-btn social-btn-fb"  href="#">Facebook</a>
-        </div>
-        <div class="ytube">
-          <a class="social-btn social-btn-ytube" href="#">Youtube</a>
-        </div>
+        <a class="social-btn social-btn-tw" href="#">Twitter</a>
+        <a class="social-btn social-btn-fb"  href="#">Facebook</a>
+        <a class="social-btn social-btn-ytube" href="#">Youtube</a>
       </div>
       <div class="website-link">
-        <p>Website by</p>
-        <a href="#">
-          <img src="images/htmlacademy.png" width="113" height="39" alt="img-html">
-      </a>
+        <p class="copyright">Website by<a href="http://glukhanko.ru/" class="glukhanko" target="blank">Htmlacademy</a></p>
       </div>
     </div>
   </footer>
+  </div>
+<div class="popup-sedona">
+  <form class="form-infos clearfix" action="#" method="post">
+    <div class="form-wrapper">
+      <label class="datecome" for="come-date">
+        Дата Заезда:
+      </label>
+      <a class="datapicker-come" href="#"></a>
+      <input class="come-inp" type="text" id="come-date" name="date-come" placeholder="24 АПРЕЛЯ 2016">
+      <label class="dateout" for="out-date">
+        Дата Выезда:
+      </label>
+      <a class="datapicker-out" href="#"></a>
+      <input class="out-inp" type="text" id="out-date" name="date-out" placeholder="4 ИЮЛЯ 2016">
+      <div class="search-button-block">
+        <button type="submit" class="search-button">Найти</button>
+      </div>
+    </div>
+  </form>
 </div>
+<script src="js/scripts.js"></script>
 </body>
 </html>

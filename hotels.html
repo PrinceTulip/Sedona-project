@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Sedona Hotels</title>
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="style/normalize.css">
+  <link rel="stylesheet" href="style/main.css">
+  <link rel="stylesheet" href="style/style-ui.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script async>
+      $( function() {
+          $( "#slider-range" ).slider({
+              range: true,
+              min: 0,
+              max: 3900,
+              values: [ 0, 3000 ],
+              slide: function( event, ui ) {
+                  $( "#amount" ).val( "" + ui.values[ 0 ] );
+                  $( "#amount-1" ).val( "" + ui.values[ 1 ] );
+              }
+          });
+          $( "#amount" ).val( "" + $( "#slider-range" ).slider( "values", 0 ) );
+          $( "#amount-1" ).val( "" + $( "#slider-range" ).slider( "values", 1 ) );
+
+          // Изменение местоположения ползунка при вводе данных в первый елемент input
+          $("input#amount").change(function(){
+              var value1 = $("input#amount").val();
+              var value2 = $("input#amount-1").val();
+              if (parseInt(value1) > parseInt(value2)){
+                  value1 = value2;
+                  $("input#amount").val(value1);
+              }
+              $("#slider-range").slider("values",0,value1);
+          });
+
+          // Изменение местоположения ползунка при вводе данных во второй елемент input
+          $("input#amount-1").change(function() {
+              var value1=$("input#amount").val();
+              var value2=$("input#amount-1").val();
+
+              if (parseInt(value1) > parseInt(value2)){
+                  value2 = value1;
+                  $("input#amount-1").val(value2);
+              }
+              $("#slider-range").slider("values",1,value2);
+          });
+
+          //Фильтрация ввода в поля
+          jQuery('#amount,amount-1').keypress(function(event){
+              var key, keyChar;
+              if(!event) var event = window.event;
+
+              if (event.keyCode) key =event.keyCode;
+              else if(event.which) key = event.which;
+
+              if(key==null || key ==0  || key==8 || key==13 || key==9 || key==46 || key==37 || key==39 )
+                  return true;
+              keyChar=String.fromCharCode(key);
+
+              if(!/\d/.test(keyChar)) return false;
+
+          });
+
+      });
+  </script>
+</head>
+<body class="inner-page">
+<div class="wrapper clearfix">
+  <header class="main-header clearfix">
+    <div class="container clearfix">
+      <nav class="main-navigation">
+        <ul class="first-ul">
+          <li>
+            <a class="active" href="#">Информация</a>
+          </li>
+          <li>
+            <a href="#">Фото и Видео</a>
+          </li>
+        </ul>
+        <ul class="second-ul">
+          <li>
+            <a href="#">Карта Штата</a>
+          </li>
+          <li>
+            <a href="#">Гостиницы</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="main-block clearfix">
+    <div class="section-block">
+      <div class="container clearfix">
+        <div class="main-items-block clearfix">
+          <div class="infrastructure-item clearfix">
+          <span class="title-item">Инфраструктура:</span>
+            <form class="infrastructure" action="#" method="post">
+              <label class="choose-checkbox">
+                <input type="checkbox" name="brand">
+                <span class="checkbox-indicator"></span>
+                Басейн
+              </label>
+              <label class="choose-checkbox">
+                <input type="checkbox" name="brand">
+                <span class="checkbox-indicator"></span>
+                Парковка
+              </label>
+              <label class="choose-checkbox">
+                <input type="checkbox" name="brand">
+                <span class="checkbox-indicator"></span>
+                WI-FI
+              </label>
+            </form>
+          </div>
+          <div class="housetype-item clearfix">
+            <span class="title-item">Тип жилья:</span>
+            <form class="housetype" action="#" method="post">
+              <label class="choose-checkbox">
+                <input type="checkbox" name="brand">
+                <span class="checkbox-indicator"></span>
+                Гостиница
+              </label>
+              <label class="choose-checkbox">
+                <input type="checkbox" name="brand">
+                <span class="checkbox-indicator"></span>
+                Мотель
+              </label>
+              <label class="choose-checkbox">
+                <input type="checkbox" name="brand">
+                <span class="checkbox-indicator"></span>
+                Апартаменты
+              </label>
+            </form>
+          </div>
+        </div>
+          <div class="slider-small clearfix">
+              <label for="amount">Стоимость в сутки(р):</label>
+            <div class="block-inputs">
+                <span>От</span>
+                <input type="text" id="amount">
+              <span>До</span>
+              <input type="text" id="amount-1">
+            </div>
+            <div id="slider-range"></div>
+            <div class="link-show">
+              <a href="#">Показать</a>
+            </div>
+          </div>
+      </div>
+      <div class="sorting-block clearfix">
+        <div class="container clearfix">
+        <h2>Найдено: 3</h2>
+          <span>Сортировка:</span>
+          <ul class="sorting-list">
+            <li>
+              <a class="active" href="#">По цене</a>
+            </li>
+            <li>
+              <a class="type" href="#">По типу</a>
+            </li>
+            <li>
+              <a class="rating" href="#">По рейтингу</a>
+            </li>
+          </ul>
+          <div class="sorting-controls clearfix">
+            <a class="up" href="#">icon-up</a>
+            <a class="down active" href="#">icon-down</a>
+          </div>
+        </div>
+      </div>
+      <div class="result-block clearfix">
+        <div class="result-item clearfix">
+            <div class="container clearfix">
+              <div class="hotel-result">
+                <img src="images/hotel-img1.jpg" alt="hotels-img">
+                <a class="title-link" href="#">Amara Resort & Spa</a>
+                <div class="type-price">
+                  <span>Гостиница</span>
+                  <span>От 3500 р.</span>
+                </div>
+                  <div class="details-block clearfix">
+                    <a class="details" href="#">Подробнее</a>
+                  </div>
+                  <div class="reserve-block">
+                   <a class="reserve" href="#">Забронировать</a>
+                  </div>
+            </div>
+              <div class="rating-result">
+                <div class="raiting-stars ">
+                  <span class="icon-star"></span>
+                  <span class="icon-star"></span>
+                  <span class="icon-star"></span>
+                  <span class="icon-star"></span>
+                </div>
+                <div class="raiting-sum">
+                  <span>Рейтинг: 8,5</span>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="result-item clearfix">
+          <div class="container clearfix">
+            <div class="hotel-result">
+              <img src="images/hotel-img2.jpg" alt="hotels-img">
+              <a class="title-link" href="#">DESERT QUAIL INN</a>
+              <div class="type-pice">
+                <span>Мотель</span>
+                <span>От 2000 р.</span>
+              </div>
+              <div class="details-block clearfix">
+                <a class="details" href="#">Подробнее</a>
+              </div>
+              <div class="reserve-block clearfix">
+                <a class="reserve" href="#">Забронировать</a>
+              </div>
+            </div>
+            <div class="rating-result">
+              <div class="raiting-stars clearfix">
+                <span class="icon-star"></span>
+                <span class="icon-star"></span>
+              </div>
+              <div class="raiting-sum clearfix">
+                <span>Рейтинг: 8,9</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="result-item clearfix">
+          <div class="container clearfix">
+            <div class="hotel-result">
+              <img src="images/hotel-img3.jpg" alt="hotels-img">
+              <a class="title-link" href="#">VILLAS AT POCO DIABLO</a>
+              <div class="type-price">
+                <span>Апартаменты</span>
+                <span>От 4000 р.</span>
+              </div>
+              <div class="details-block clearfix">
+                <a class="details" href="#">Подробнее</a>
+              </div>
+              <div class="reserve-block clearfix">
+                <a class="reserve" href="#">Забронировать</a>
+              </div>
+            </div>
+            <div class="rating-result">
+              <div class="raiting-stars clearfix">
+                <span class="icon-star"></span>
+                <span class="icon-star"></span>
+                <span class="icon-star"></span>
+              </div>
+              <div class="raiting-sum clearfix">
+                <span>Рейтинг: 9,2</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="main-footer">
+    <div class="container clearfix">
+      <div class="linksedona">
+        <a href="#">#VisitSedona</a>
+      </div>
+      <div class="footer-social clearfix">
+        <a class="social-btn social-btn-tw" href="#">Twitter</a>
+        <a class="social-btn social-btn-fb"  href="#">Facebook</a>
+        <a class="social-btn social-btn-ytube" href="#">Youtube</a>
+      </div>
+      <div class="website-link">
+        <p class="copyright">Website by<a href="http://glukhanko.ru/" class="glukhanko" target="blank">Htmlacademy</a></p>
+      </div>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
